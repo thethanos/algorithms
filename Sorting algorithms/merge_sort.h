@@ -11,9 +11,14 @@
 
 //C-style
 
-void merge_sort_mt(int* data, int begin, int end, int* temp);
-void merge_sort(int* data, int begin, int end, int* temp);
-void merge(int* data, int begin, int mid, int end, int* temp);
+template <typename T>
+void merge_sort_mt(T* data, int begin, int end, int* temp);
+
+template <typename T>
+void merge_sort(T* data, int begin, int end, int* temp);
+
+template <typename T>
+void merge(T* data, int begin, int mid, int end, int* temp);
 
 template <typename T, size_t size>
 void improved_merge_sort_mt(T(&data)[size])
@@ -31,20 +36,22 @@ void improved_merge_sort_mt(T* data, size_t size)
 	delete[] temp;
 }
 
-void merge_sort_mt(int* data, int begin, int end, int* temp)
+template <typename T>
+void merge_sort_mt(T* data, int begin, int end, int* temp)
 {
 	if (begin >= end) return;
 
 	int mid = (begin + end) / 2;
 
-	std::thread th(merge_sort, data, begin, mid, temp);
+	std::thread th(merge_sort<int>, data, begin, mid, temp);
 	merge_sort(data, mid + 1, end, temp);
 
 	th.join();
 	merge(data, begin, mid, end, temp);
 }
 
-void merge_sort(int* data, int begin, int end, int* temp)
+template <typename T>
+void merge_sort(T* data, int begin, int end, int* temp)
 {
 	if (begin >= end) return;
 
@@ -56,7 +63,8 @@ void merge_sort(int* data, int begin, int end, int* temp)
 	merge(data, begin, mid, end, temp);
 }
 
-void merge(int* data, int begin, int mid, int end, int* temp)
+template <typename T>
+void merge(T* data, int begin, int mid, int end, int* temp)
 {
 	int i(begin), j(mid + 1), k(begin);
 
