@@ -1,7 +1,6 @@
 #pragma once
 
 #include <thread>
-#include <list>
 #include <vector>
 
 /*********Merge sort*************
