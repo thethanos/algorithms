@@ -15,7 +15,6 @@ void comb_sort(T* data, size_t size)
 	int gap = size;
 	bool swapped = true;
 
-
 	while (swapped || gap != 1)
 	{
 		swapped = false;
