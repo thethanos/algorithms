@@ -4,7 +4,7 @@
 
 /*********Quick sort*************
 *  Time complexity: O(nLog(n))  *
-*  Auxiliary space: O(1)		*
+*  Auxiliary space: O(1)        *
 *********************************/
 
 //C-style

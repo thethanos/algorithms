@@ -5,7 +5,7 @@
 
 /*********Merge sort*************
 *  Time complexity: O(nLog(n))  *
-*  Auxiliary space: O(n)		*
+*  Auxiliary space: O(n)        *
 *********************************/
 
 //C-style

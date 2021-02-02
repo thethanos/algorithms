@@ -4,8 +4,8 @@
 
 /******Depth first traversal (recursion)******
 *  Graph representation: adjacency matrix    * 
-*  Time complexity: O(V + E)			     *
-*  Auxiliary space: O(V)				     *
+*  Time complexity: O(V + E)                 *
+*  Auxiliary space: O(V)                     *
 **********************************************/
 
 

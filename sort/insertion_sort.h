@@ -2,7 +2,7 @@
 
 /*******Insertion sort***********
 *  Time complexity: O(n * n)    *
-*  Auxiliary space: O(1)		*
+*  Auxiliary space: O(1)        *
 *********************************/
 
 //C-style
