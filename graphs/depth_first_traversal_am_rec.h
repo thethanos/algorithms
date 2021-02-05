@@ -8,7 +8,6 @@
 *  Auxiliary space: O(V)                     *
 **********************************************/
 
-
 //C-style
 
 void visit_vertex(int cur_vert, int** graph, size_t size, bool* visited);
