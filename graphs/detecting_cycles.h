@@ -10,48 +10,6 @@ using std::vector;
 *  Auxiliary space: O(V)                     *
 **********************************************/
 
-//C-style
-
-bool visit_vertex(int cur_vert, int parent, int** graph, size_t size, bool* visited);
-
-bool has_cycle(int** graph, size_t size)
-{
-	bool* visited = new bool[size];
-	memset(visited, 0, size);
-
-	for (int cur_vert(0); cur_vert < size; ++cur_vert)
-	{
-		if (visited[cur_vert]) continue;
-
-		if (visit_vertex(cur_vert, -1, graph, size, visited))
-			return true;
-	}
-
-	return false;
-}
-
-bool visit_vertex(int cur_vert, int parent, int** graph, size_t size, bool* visited)
-{
-	visited[cur_vert] = true;
-
-	for (int adj_vert(0); adj_vert < size; ++adj_vert)
-	{
-		if (!graph[cur_vert][adj_vert]) continue;
-
-		if (!visited[adj_vert])
-		{
-			if (visit_vertex(adj_vert, cur_vert, graph, size, visited))
-				return true;
-		}
-		else if (adj_vert != parent)
-			return true;
-	}
-
-	return false;
-}
-
-//STL-style
-
 bool visit_vertex(int cur_vert, int parent, const vector<vector<int>>& graph, vector<bool>& visited);
 
 bool has_cycle(const vector<vector<int>>& graph)
