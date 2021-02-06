@@ -2,17 +2,19 @@
 
 #include <vector>
 
+using std::vector;
+
 /******Depth first traversal (recursion)******
 *  Graph representation: adjacency matrix    * 
-*  Time complexity: O(V + E)                 *
+*  Time complexity: O(V * V)                 *
 *  Auxiliary space: O(V)                     *
 **********************************************/
 
-void visit_vertex(int cur_vert, std::vector<std::vector<int>>& graph, std::vector<bool>& visited);
+void visit_vertex(int cur_vert, vector<vector<int>>& graph, vector<bool>& visited);
 
-void depth_first_traversal(int start, std::vector<std::vector<int>>& graph)
+void depth_first_traversal(int start, vector<vector<int>>& graph)
 {
-	std::vector<bool> visited(graph.size());
+	vector<bool> visited(graph.size());
 
 	visited[start] = true;
 
@@ -23,7 +25,7 @@ void depth_first_traversal(int start, std::vector<std::vector<int>>& graph)
 	}
 }
 
-void visit_vertex(int cur_vert, std::vector<std::vector<int>>& graph, std::vector<bool>& visited)
+void visit_vertex(int cur_vert, vector<vector<int>>& graph, vector<bool>& visited)
 {
 	visited[cur_vert] = true;
 
