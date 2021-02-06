@@ -10,9 +10,9 @@ using std::vector;
 *  Auxiliary space: O(V)                     *
 **********************************************/
 
-void visit_vertex(int cur_vert, vector<vector<int>>& graph, vector<bool>& visited);
+void visit_vertex(int cur_vert, const vector<vector<int>>& graph, vector<bool>& visited);
 
-void depth_first_traversal(int start, vector<vector<int>>& graph)
+void depth_first_traversal(int start, const vector<vector<int>>& graph)
 {
 	vector<bool> visited(graph.size());
 
@@ -25,7 +25,7 @@ void depth_first_traversal(int start, vector<vector<int>>& graph)
 	}
 }
 
-void visit_vertex(int cur_vert, vector<vector<int>>& graph, vector<bool>& visited)
+void visit_vertex(int cur_vert, const vector<vector<int>>& graph, vector<bool>& visited)
 {
 	visited[cur_vert] = true;
 
