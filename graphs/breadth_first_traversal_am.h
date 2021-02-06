@@ -8,7 +8,7 @@ using std::queue;
 
 /****Breadth first traversal using queue******
 *  Graph representation: adjacency matrix    *
-*  Time complexity: O(V + E)                 *
+*  Time complexity: O(V * V)                 *
 *  Auxiliary space: O(V)                     *
 **********************************************/
 
