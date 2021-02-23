@@ -50,10 +50,9 @@ void cocktail_sort(BidirectIt begin, BidirectIt end)
 {
 	bool swapped = true;
 
-	auto iter_beg(begin), iter_end(end);
 	while (swapped)
 	{
-		for (auto iter1(iter_beg), iter2 = std::next(iter_beg, 1); iter2 != iter_end; ++iter1, ++iter2)
+		for (auto iter1(begin), iter2 = std::next(iter1, 1); iter2 != end; ++iter1, ++iter2)
 		{
 			if (*iter1 > * iter2)
 			{
@@ -65,17 +64,19 @@ void cocktail_sort(BidirectIt begin, BidirectIt end)
 		if (!swapped) return;
 
 		swapped = false;
+		--end;
 
-		auto iter1 = --iter_end;
-		for (auto iter2 = std::prev(iter1); iter1 != begin; --iter1, --iter2)
+		for (auto iter1(end), iter2 = std::prev(iter1); ; --iter1, --iter2)
 		{
 			if (*iter1 < *iter2)
 			{
 				std::iter_swap(iter1, iter2);
 				swapped = true;
 			}
+
+			if (iter2 == begin) break;
 		}
 
-		++iter_beg;
+		++begin;
 	}
 }
