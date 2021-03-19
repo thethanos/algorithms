@@ -54,32 +54,31 @@ void heapify(RandomIt begin, RandomIt end, RandomIt item);
 template <typename RandomIt>
 void heap_sort(RandomIt begin, RandomIt end)
 {
-	RandomIt iter = std::next(begin, std::distance(begin, end) / 2 - 1);
-
-	while (true)
+	size_t mid = std::distance(begin, end) / 2;
+	for (auto iter = std::next(begin, mid-1); ;)
 	{
 		heapify(begin, end, iter);
 		if (iter == begin) break;
 		--iter;
 	}
 	
-	for (auto iter(--end); iter != begin; --iter, --end)
+	for (auto iter(std::prev(end)); iter != begin; --iter)
 	{
 		std::iter_swap(begin, iter);
-		heapify(begin, end, begin);
+		heapify(begin, iter, begin);
 	}
 }
 
 template <typename RandomIt>
 void heapify(RandomIt begin, RandomIt end, RandomIt item)
 {
-	size_t cur_index = 2 * std::distance(begin, item);
+	size_t size = std::distance(begin, end), cur_index = 2 * std::distance(begin, item);
 	RandomIt max = item, left = end, right = end;
 
-	if(std::distance(begin, end) > cur_index + 1)
+	if(cur_index + 1 < size)
 		left  = std::next(begin, cur_index + 1);
 
-	if(std::distance(begin, end) > cur_index + 2)
+	if(cur_index + 2 < size)
 		right = std::next(begin, cur_index + 2);
 
 	if (left < end && *item < *left)
