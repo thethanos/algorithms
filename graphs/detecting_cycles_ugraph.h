@@ -6,7 +6,7 @@ using std::vector;
 
 /*********Detecting cycles (recursion)********
 *  Graph representation: adjacency matrix    *
-*  Time complexity: O(V + E)                 *
+*  Time complexity: O(V * V)                 *
 *  Auxiliary space: O(V)                     *
 **********************************************/
 
