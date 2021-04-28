@@ -42,7 +42,7 @@ void merge_sort_mt(T* data, int begin, int end, int* temp)
 
 	int mid = (begin + end) / 2;
 
-	std::thread th(merge_sort<int>, data, begin, mid, temp);
+	std::thread th(merge_sort<T>, data, begin, mid, temp);
 	merge_sort(data, mid + 1, end, temp);
 
 	th.join();
