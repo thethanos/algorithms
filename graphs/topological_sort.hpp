@@ -3,20 +3,23 @@
 #include <vector>
 #include <list>
 
+#using std::vector;
+#using std::list;
+
 /********Topological sort (recursion)*********
 *  Graph representation: adjacency list      *
 *  Time complexity: O(V + E)                 *
 *  Auxiliary space: O(V)                     *
 **********************************************/
 
-void topological_sort_rec(int cur_vert, const std::vector<std::list<int>>& graph, std::vector<bool>& visited, std::vector<int>& res);
+void topological_sort_rec(int cur_vert, const vector<list<int>>& graph, vector<bool>& visited, vector<int>& res);
 
-std::vector<int> topological_sort(const std::vector<std::list<int>>& graph)
+vector<int> topological_sort(const vector<list<int>>& graph)
 {
-    std::vector<int> res;
+    vector<int> res;
     res.reserve(graph.size());
 
-    std::vector<bool> visited(graph.size());
+    vector<bool> visited(graph.size());
 
     for (int vertex(0); vertex < graph.size(); ++vertex)
         if (!visited[vertex])
@@ -26,7 +29,7 @@ std::vector<int> topological_sort(const std::vector<std::list<int>>& graph)
     return std::vector<int> {res.rbegin(), res.rend()};
 }
 
-void topological_sort_rec(int cur_vert, const std::vector<std::list<int>>& graph, std::vector<bool>& visited, std::vector<int>& res)
+void topological_sort_rec(int cur_vert, const vector<list<int>>& graph, vector<bool>& visited, vector<int>& res)
 {
     visited[cur_vert] = true;
 
