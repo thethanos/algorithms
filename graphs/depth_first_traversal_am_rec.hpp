@@ -16,13 +16,7 @@ void depth_first_traversal(int start, const vector<vector<int>>& graph)
 {
 	vector<bool> visited(graph.size());
 
-	visited[start] = true;
-
-	for (int adj_vert(0); adj_vert < graph.size(); ++adj_vert)
-	{
-		if (!visited[adj_vert] && graph[start][adj_vert])
-			visit_vertex(adj_vert, graph, visited);
-	}
+	visit_vertex(start, graph, visited);
 }
 
 void visit_vertex(int cur_vert, const vector<vector<int>>& graph, vector<bool>& visited)
