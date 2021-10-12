@@ -4,9 +4,9 @@
 #include <list>
 #include <forward_list>
 
-#using std::vector;
-#using std::list;
-#using std::forward_list;
+using std::vector;
+using std::list;
+using std::forward_list;
 
 /********Topological sort (recursion)*********
 *  Graph representation: adjacency list      *
