@@ -15,7 +15,7 @@ int get_next_vertex(const vector<int>& visited, const vector<int>& distances);
 vector<int> dijkstra_algorithm(int start, const vector<vector<int>>& graph, vector<int>& path_util)
 {
 	vector<int> visited(graph.size());
-	vector<int> distances(graph.size(), INT_MAX);
+	vector<int> distances(graph.size(), INT32_MAX);
 	path_util.resize(graph.size());
 
 	distances[start] = 0;
@@ -44,7 +44,7 @@ vector<int> dijkstra_algorithm(int start, const vector<vector<int>>& graph, vect
 
 int get_next_vertex(const vector<int>& visited, const vector<int>& distances)
 {
-	int min_dist(INT_MAX), min_index(0);
+	int min_dist(INT32_MAX), min_index(0);
 
 	for (int vertex(0); vertex < distances.size(); ++vertex)
 	{
