@@ -21,10 +21,9 @@ vector<int> dijkstra_algorithm(int start, const vector<vector<int>>& graph, vect
 	distances[start] = 0;
 	path_util[start] = -1;
 
-	int cur_vert(0);
 	for (int i(0); i < graph.size()-1; ++i)
 	{
-		cur_vert = get_next_vertex(visited, distances);
+		int cur_vert = get_next_vertex(visited, distances);
 		visited[cur_vert] = true;
 
 		for (int adj_vert(0); adj_vert < graph.size(); ++adj_vert)

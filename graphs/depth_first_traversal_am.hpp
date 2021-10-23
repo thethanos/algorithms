@@ -20,10 +20,9 @@ void depth_first_traversal(int start, const vector<vector<int>>& graph)
 	stack<int> st;
 	st.push(start);
 
-	int cur_vert(0);
 	while (!st.empty())
 	{
-		cur_vert = st.top();
+		int cur_vert = st.top();
 		st.pop();
 
 		for (int adj_vert(graph.size()-1); adj_vert >= 0; --adj_vert)

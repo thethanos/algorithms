@@ -21,20 +21,16 @@ vector<list<int>> kosaraju_algorithm(const vector<list<int>>& graph)
 {
     vector<list<int>> res;
 
-    auto stack = dfs(graph);
+    auto dfs_res = dfs(graph);
 
     auto reversed_graph = get_reversed_graph(graph);
 
     vector<bool> visited(graph.size());
-    while (!stack.empty())
+    for (auto vertex : dfs_res)
     {
-        int cur_vert = stack.back();
-        stack.pop_back();
-
         list<int> res_list;
-        if (!visited[cur_vert])
-            dfs_util(reversed_graph, cur_vert, visited, res_list);
-
+        if (!visited[vertex])
+            dfs_util(reversed_graph, vertex, visited, res_list);
 
         if (!res_list.empty())
             res.push_back(res_list);

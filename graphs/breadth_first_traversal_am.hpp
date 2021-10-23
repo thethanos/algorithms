@@ -20,10 +20,9 @@ void breadth_firts_traversal(int start, const vector<vector<int>>& graph)
 	queue<int> que;
 	que.push(start);
 
-	int cur_vert(0);
 	while (!que.empty())
 	{
-		cur_vert = que.front();
+		int cur_vert = que.front();
 		que.pop();
 
 		for (int adj_vert(0); adj_vert < graph.size(); ++adj_vert)
