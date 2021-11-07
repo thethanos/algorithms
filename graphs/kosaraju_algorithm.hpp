@@ -59,7 +59,7 @@ void dfs_util(const vector<list<int>>& graph, int cur_vert, vector<bool>& visite
             dfs_util(graph, adj_vert, visited, res);
     }
 
-    res.push_back(cur_vert);
+    res.push_front(cur_vert);
 }
 
 vector<list<int>> get_reversed_graph(const vector<list<int>>& graph)
