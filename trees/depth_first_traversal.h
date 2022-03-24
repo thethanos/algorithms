@@ -5,7 +5,7 @@
 using std::stack;
 
 /*****Depth first traversal using stack****
-*  Time complexity: O(n * n)              *
+*  Time complexity: O(n)	              *
 *  Auxiliary space: O(n)                  *
 *******************************************/
 
