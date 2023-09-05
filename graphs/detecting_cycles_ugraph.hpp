@@ -21,7 +21,7 @@ bool has_cycle(const vector<vector<int>>& graph)
 		if (visited[cur_vert]) continue;
 
 		if (visit_vertex(cur_vert, -1, graph, visited))
-		return true;
+			return true;
 	}
 
 	return false;
